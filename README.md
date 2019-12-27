@@ -1,4 +1,6 @@
 # MyManagedCudaTest
+
+
 ## 개요
 ManagedCuda 라이브러리 테스트 프로젝트 저장용
 
@@ -45,6 +47,9 @@ ManagedCuda 라이브러리는 C#에서 CUDA를 사용하는데 도움을 주는
   - [참고링크 2](https://blog.naver.com/pjm2108/220269762506)
 2. 함수를 이용하여 C또는 CU파일을 읽음
   - [SimpleCUDAExample](https://github.com/mgravell/SimpleCUDAExample)
+  - 자신의 CUDA 버전에 맞는 dll이 필요하다.
+    - 예1) nvrtc64_100_0.dll ← 단, CUDA 10.0일 경우 이름을 nvrtc64_100.dll로 변경할 것
+    - 예2) nvrtc-builtins64_100.dll
 
 
 
@@ -54,4 +59,4 @@ ManagedCuda 라이브러리는 C#에서 CUDA를 사용하는데 도움을 주는
 host_config.h 파일을 수정하거나 프로젝트 플랫폼 도구에서 사용하는 VS 버전을 다운그레이드하면 된다.
 현재 이 프로젝트에 있는 MyPtx와 MyPtx2는 후자의 방법을 사용했다.
 
-
+####
