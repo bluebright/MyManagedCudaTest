@@ -16,7 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
- 
+
 namespace MyCudaPtxRunner
 {
 
@@ -106,6 +106,8 @@ namespace MyCudaPtxRunner
                 d_K.Dispose();
                 d_L.Dispose();
 
+                //See https://github.com/kunzmi/managedCuda/issues/1
+                CudaContext.ProfilerStop();
             }
         }
 
@@ -164,6 +166,7 @@ namespace MyCudaPtxRunner
                 Console.Error.WriteLine(ex.Message);
                 return;
             }
+
         }
 
     }
