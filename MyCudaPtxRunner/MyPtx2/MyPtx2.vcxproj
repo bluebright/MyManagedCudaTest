@@ -59,7 +59,7 @@
       <CompileOut>..\BuildOutPut\$(Platform)\$(Configuration)\%(Filename).ptx</CompileOut>
       <Keep>false</Keep>
       <NvccCompilation>ptx</NvccCompilation>
-      <GPUDebugInfo>false</GPUDebugInfo>
+      <GPUDebugInfo>true</GPUDebugInfo>
     </CudaCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

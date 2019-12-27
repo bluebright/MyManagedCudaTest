@@ -28,10 +28,15 @@ ManagedCuda 라이브러리는 C#에서 CUDA를 사용하는데 도움을 주는
 ### 프로젝트 기본 구조
 - MyCudaPtxRunner
   - BuildOutPut
+    - 빌드 출력
   - MyCudaPtxRunner
-  - MyPtx ← VS2015
-  - MyPtx2 ← VS2015
+    - 테스트용으로 만든 WPF (버튼만 있음)
+  - MyPtx(VS2015)
+    - 빌드 결과는 PTX
+  - MyPtx2(VS2015)
+    - 빌드 결과는 PTX
   - packages
+    - 라이브러리 dll
   - MyCudaPtxRunner.sln
 
 
