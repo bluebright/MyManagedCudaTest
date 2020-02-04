@@ -7,12 +7,11 @@
 
 extern "C" {
 
-	__global__ void multKernel(int *c, const int *a, const int *b)
+	__global__ void matrixMultKernel(int *c, const int *a, const int *b)
 	{
 		int i = threadIdx.x;
 		c[i] = a[i] * b[i] * 100;
 	}
-
 
 	// "main" function is not required
 }

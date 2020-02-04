@@ -1,4 +1,5 @@
 ﻿using ManagedCuda;
+using ManagedCuda.BasicTypes;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -51,7 +52,7 @@ namespace MyCudaPtxRunner
                 kernel_2.GridDimensions = 1;
                 kernel_2.BlockDimensions = 5;
 
-                CudaKernel kernel_4 = ctx.LoadKernel("MyPtx2Kernel_2.ptx", "multKernel");
+                CudaKernel kernel_4 = ctx.LoadKernel("MyPtx2Kernel_2.ptx", "matrixMultKernel");
                 kernel_2.GridDimensions = 1;
                 kernel_2.BlockDimensions = 5;
 
@@ -76,6 +77,9 @@ namespace MyCudaPtxRunner
                 CudaDeviceVariable<int> d_I = new CudaDeviceVariable<int>(N);
                 kernel_3.Run(d_I.DevicePointer, d_G.DevicePointer, d_H.DevicePointer);
 
+                
+                int[,] mat_A = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+              
                 CudaDeviceVariable<int> d_J = h_A;
                 CudaDeviceVariable<int> d_K = h_B;
                 CudaDeviceVariable<int> d_L = new CudaDeviceVariable<int>(N);
@@ -169,6 +173,33 @@ namespace MyCudaPtxRunner
 
         }
 
+        private void BtnRun3_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+                int[] a = { 1, 2, 3, 4, 5 };
+                int[] b = { 110, 220, 330, 440, 550 };
+                int[] c = new int[5];
+
+                ManagedCu.MyCudaCliWrap obj = new ManagedCu.MyCudaCliWrap();
+
+                obj.RunAdd(c, a, b, 5);
+
+                foreach (int i in c)
+                {
+                    System.Console.Write("{0} ", i);
+                }
+
+                Console.WriteLine();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+        }
     }
 
 
